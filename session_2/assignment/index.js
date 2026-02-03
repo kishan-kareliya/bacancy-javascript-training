@@ -44,19 +44,27 @@ for (let i = 1; i <= 20; i++) {
 
 const role = "MANAGER";
 
-switch (role) {
-    case "ADMIN":
-        console.log("Full access");
-        break;
-    case "USER":
-        console.log("Limited access");
-        break;
-    case "MANAGER":
-        console.log("Moderate access");
-        break;
-    default:
-        console.log("Invalid role");
-}
+const roleObj = {
+    "ADMIN": "ADMIN -> Full access",
+    "USER": "USER -> Limited access",
+    "MANAGER": "MANAGER -> Moderate access"
+};
+
+console.log(roleObj[role])
+
+// switch (role) {
+//     case "ADMIN":
+//         console.log("Full access");
+//         break;
+//     case "USER":
+//         console.log("Limited access");
+//         break;
+//     case "MANAGER":
+//         console.log("Moderate access");
+//         break;
+//     default:
+//         console.log("Invalid role");
+// }
 
 
 
