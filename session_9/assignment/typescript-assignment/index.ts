@@ -1,3 +1,12 @@
+// TypeScript Basics
+// Create a variable prices as an array of numbers
+// Write a function calculateTotal that:
+// Accepts a number array
+// Returns the total sum
+// Write another function that:
+// Accepts two numbers
+// Returns a string if the result is greater than 100
+
 const prices: number[] = [100, 120, 80, 160, 240, 50];
 
 function calculateTotal(arr: number[]): number {
