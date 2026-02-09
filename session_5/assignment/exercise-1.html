@@ -1,0 +1,26 @@
+<!-- Create an HTML file with a paragraph <p id="secret-message">Initial Text</p> and a button.
+On button click, select the paragraph using getElementById and change its text to "You found the secret message!". -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Message</title>
+</head>
+
+<body>
+    <H1>Secret Message</H1>
+    <p id="secret-message">Initial Text</p>
+    <button id="btn">Click Me</button>
+    <script>
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", function () {
+            const message = document.getElementById("secret-message");
+            message.innerText = "You found the secret message!";
+        })
+    </script>
+</body>
+
+</html>
