@@ -1,0 +1,73 @@
+<!--
+Assignment : Browser Storage
+Create a simple HTML page with:
+One input field (name)
+Two buttons: Save and Load
+On Save:
+Store the value in localStorage
+Store the same value in sessionStorage
+On Load:
+Retrieve and display values from both storages
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Storage</title>
+</head>
+
+<body>
+    <form>
+        Name: <input type="text" id="name" />
+        <input type="submit" id="submit-btn" value="submit"><br />
+        <input type="submit" id="load-btn" value="load-data">
+    </form>
+    <div class="show-data">
+        <div class="localstorage-data">
+            <ul id="local-data"></ul>
+        </div>
+        <div class="session-storage-data">
+            <ul id="session-data"></ul>
+        </div>
+    </div>
+    <script>
+        let btn = document.getElementById("submit-btn");
+        let name = document.getElementById("name");
+        let loadBtn = document.getElementById("load-btn");
+
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            localStorage.setItem("name", name.value);
+            sessionStorage.setItem("name", name.value);
+        });
+
+        loadBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            localList = document.getElementById("local-data");
+            sessionList = document.getElementById("session-data");
+
+            localData = localStorage.getItem("name");
+            sessionData = sessionStorage.getItem("name");
+
+            localD = document.createElement("li")
+            localD.innerText = localData;
+            localHeading = document.createElement("h3")
+            localHeading.innerText = "LocalStorage Data: "
+            localList.appendChild(localHeading);
+            localList.appendChild(localD);
+
+            sessionD = document.createElement("li");
+            sessionD.innerText = sessionData;
+            sessionHeading = document.createElement("h3")
+            sessionHeading.innerText = "SessionStorage Data: "
+            localList.appendChild(sessionHeading);
+            sessionList.appendChild(sessionD);
+        })
+    </script>
+</body>
+
+</html>
